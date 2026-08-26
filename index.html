@@ -334,10 +334,48 @@ input[type="file"] {
 #passwordError {
     color: #d84d24;
     font-weight: bold;
+}.page-nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 10px;
+    text-align: center;
+}
+
+.page-nav button {
+    padding: 9px 12px;
+    margin: 3px;
+    font-size: 13px;
+    box-shadow: 0 3px 0 #a53b19;
+}.back-button {
+    display: block;
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    margin: 0 0 10px 0;
+    border-radius: 50%;
+    font-size: 22px;
+    background: #fffdf7;
+    color: #d95c32;
+    border: 2px solid #d95c32;
+    box-shadow: 0 3px 0 #efb08b;
+}
 }
 </style>
 </head>
+<nav class="page-nav">
 
+    <button onclick="nextPage(1)">🏠 Home</button>
+
+    <button onclick="nextPage(3)">🎁 Gifts</button>
+
+    <button onclick="nextPage(4)">📸 Memory</button>
+
+    <button onclick="nextPage(5)">🏆 Final</button>
+
+</nav>
 <body><div id="passwordScreen">
 
     <div class="password-card">
@@ -397,7 +435,7 @@ OPEN IT 👀
 <section class="page" id="page2">
 
 <div class="card">
-
+<button class="back-button" onclick="nextPage(1)">🔙</button>
 <div class="sticker">😏</div>
 
 <h1>THIS IS FOR YOU TWO!</h1>
@@ -427,7 +465,7 @@ NO 😈
 <section class="page" id="page3">
 
 <div class="card">
-
+<button class="back-button" onclick="nextPage(2)">🔙</button>
     <div class="sticker">🎁</div>
 
     <h1>GIFTS FOR LIPSA & SURUCHI! ❤️</h1>
@@ -619,6 +657,7 @@ NO 😈
 <section class="page" id="page4">
 
 <div class="card">
+<button class="back-button" onclick="nextPage(3)">🔙</button>
 
     <div class="sticker">🌸</div>
 
@@ -666,7 +705,7 @@ NO 😈
 <section class="page" id="page5">
 
 <div class="card award">
-
+<button class="back-button" onclick="nextPage(4)">🔙</button>
 <div class="trophy">🏆</div>
 
 <h1>BEST SISTERS</h1>
