@@ -1,0 +1,224 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #f8eee0,
+            #f8eee0 10px,
+            #f5e7d5 10px,
+            #f5e7d5 20px
+        );
+    color: #49261b;
+}
+
+.paper {
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.page {
+    min-height: calc(100vh - 40px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.page.active {
+    display: flex;
+    animation: appear 0.5s ease;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    padding: 35px 25px;
+    text-align: center;
+
+    background: #fffaf0;
+
+    border: 3px solid #d95b32;
+    border-radius: 25px;
+
+    box-shadow:
+        8px 8px 0 #e6a27c,
+        0 15px 30px rgba(80, 35, 15, 0.15);
+
+    transform: rotate(-1deg);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 30%;
+    width: 40%;
+    height: 25px;
+    background: rgba(255, 207, 137, 0.8);
+    transform: rotate(-3deg);
+}
+
+.sticker {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: #d94f24;
+    font-size: 32px;
+    margin: 15px 0;
+}
+
+h2 {
+    color: #8e3b20;
+    font-size: 28px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+button {
+    border: none;
+    background: #e85b2a;
+    color: white;
+    padding: 14px 24px;
+    margin: 10px 5px;
+    border-radius: 30px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 0 #a83c19;
+    transition: 0.2s;
+}
+
+button:active {
+    transform: translateY(4px);
+    box-shadow: 0 1px 0 #a83c19;
+}
+
+.buttons {
+    position: relative;
+    min-height: 100px;
+}
+
+#noButton {
+    background: #777;
+    box-shadow: 0 5px 0 #555;
+}
+
+.gifts {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 25px 0;
+}
+
+.gifts button {
+    font-size: 45px;
+    padding: 10px;
+    background: transparent;
+    box-shadow: none;
+}
+
+.gifts button:hover {
+    transform: translateY(-8px) rotate(5deg);
+}
+
+#giftMessage {
+    min-height: 60px;
+    margin: 15px 0;
+    font-weight: bold;
+    color: #c74320;
+    font-size: 18px;
+}
+
+.hidden {
+    display: none;
+}
+
+.photo-placeholder {
+    width: 180px;
+    height: 180px;
+    margin: 20px auto;
+    border: 4px dashed #d95b32;
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: #f8dfc7;
+    font-size: 45px;
+}
+
+.photo-placeholder span {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.award {
+    border: 5px double #d95b32;
+}
+
+.trophy {
+    font-size: 70px;
+}
+
+.award h1 {
+    font-size: 38px;
+    margin-bottom: 0;
+}
+
+.name {
+    padding: 15px;
+    margin: 20px 0;
+
+    border-top: 2px dashed #d95b32;
+    border-bottom: 2px dashed #d95b32;
+
+    font-size: 22px;
+    font-weight: bold;
+    color: #c74320;
+}
+
+.rakhi {
+    font-size: 35px;
+    margin: 20px;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0.85) rotate(-3deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(-1deg);
+    }
+}
+
+@media (max-width: 400px) {
+
+    h1 {
+        font-size: 27px;
+    }
+
+    .card {
+        padding: 30px 18px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+}

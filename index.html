@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Lipsa & Suruchi ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background: repeating-linear-gradient(
+        45deg,
+        #fff2df 0px,
+        #fff2df 12px,
+        #fce8cf 12px,
+        #fce8cf 24px
+    );
+    color: #4b261d;
+    overflow-x: hidden;
+}
+
+.page {
+    min-height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 15px;
+}
+
+.page.active {
+    display: flex;
+    animation: pageIn .6s ease;
+}
+
+.card {
+    width: 100%;
+    max-width: 450px;
+    padding: 35px 22px;
+    text-align: center;
+    background: #fffdf7;
+    border: 3px solid #d95c32;
+    border-radius: 25px;
+    box-shadow: 8px 8px 0 #efb08b,
+                0 15px 35px rgba(70,30,10,.15);
+    transform: rotate(-1deg);
+}
+
+h1 {
+    color: #d84d24;
+    font-size: 30px;
+}
+
+h2 {
+    color: #9d3d21;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.sticker {
+    font-size: 60px;
+    animation: bounce 1.5s infinite;
+}
+
+button {
+    border: 0;
+    padding: 14px 23px;
+    margin: 9px 5px;
+    border-radius: 30px;
+    background: #e75b2a;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 0 #a53b19;
+}
+
+button:hover {
+    transform: translateY(-3px);
+}
+
+.secondary {
+    background: #777;
+    box-shadow: 0 5px 0 #555;
+}
+
+.gifts {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 25px 0;
+}
+
+.gift {
+    background: transparent;
+    box-shadow: none;
+    font-size: 50px;
+    padding: 10px;
+}
+
+.gift:hover {
+    transform: scale(1.2) rotate(8deg);
+}
+
+#giftMessage {
+    min-height: 55px;
+    color: #cf4820;
+    font-weight: bold;
+}
+
+/* SIX PHOTO GALLERY */
+
+.memory-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.memory-gallery img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 3px solid #d95c32;
+    box-shadow: 3px 3px 0 #efb08b;
+}
+
+.memory-gallery img:hover {
+    transform: scale(1.04);
+}
+
+.photo-box img {
+    display: none;
+    width: 210px;
+    height: 210px;
+    object-fit: cover;
+    margin: auto;
+    border-radius: 18px;
+    border: 5px solid #d95c32;
+}
+
+.photo-placeholder {
+    width: 210px;
+    height: 210px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 3px dashed #d95c32;
+    border-radius: 18px;
+    background: #ffe9d2;
+    font-size: 45px;
+}
+
+.photo-placeholder small {
+    font-size: 12px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.upload {
+    display: inline-block;
+    background: #f09b62;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.award {
+    border: 6px double #d95c32;
+}
+
+.trophy {
+    font-size: 75px;
+}
+
+.award h1 {
+    font-size: 37px;
+}
+
+.name {
+    margin: 20px 0;
+    padding: 15px;
+    border-top: 2px dashed #d95c32;
+    border-bottom: 2px dashed #d95c32;
+    color: #c94720;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.rakhi {
+    font-size: 38px;
+}
+
+.heart {
+    position: fixed;
+    bottom: -40px;
+    font-size: 22px;
+    animation: floatHeart 5s linear forwards;
+    pointer-events: none;
+}
+
+.confetti {
+    position: fixed;
+    top: -20px;
+    font-size: 20px;
+    animation: fall 4s linear forwards;
+    pointer-events: none;
+}
+
+@keyframes pageIn {
+    from {
+        opacity: 0;
+        transform: scale(.85) rotate(-4deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(-1deg);
+    }
+}
+
+@keyframes bounce {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes floatHeart {
+    from {
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(0) rotate(0);
+    }
+
+    to {
+        transform: translateY(110vh) rotate(720deg);
+    }
+}
+
+@media(max-width:400px) {
+    h1 {
+        font-size: 27px;
+    }
+
+    .card {
+        padding: 30px 16px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}#musicButton {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 22px;
+}
+</style>
+</head>
+
+<body>
+<audio id="music" loop>
+    <source src="rakhi-music.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicButton" onclick="toggleMusic()">🎵</button>
+<!-- PAGE 1 -->
+
+<section class="page active" id="page1">
+
+<div class="card">
+
+<div class="sticker">🎀</div>
+
+<h1>HEY LIPSA & SURUCHI! 😤</h1>
+
+<p>Wait... don't scroll away!</p>
+
+<p>I made something special just for both of you. ❤️</p>
+
+<button onclick="nextPage(2)">
+OPEN IT 👀
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 2 -->
+
+<section class="page" id="page2">
+
+<div class="card">
+
+<div class="sticker">😏</div>
+
+<h1>THIS IS FOR YOU TWO!</h1>
+
+<p>Lipsa & Suruchi, you are not just my sisters...</p>
+
+<p>You're my favourite headaches! 😂❤️</p>
+
+<p>Do you accept this website?</p>
+
+<button onclick="nextPage(3)">
+YES ❤️
+</button>
+
+<button id="noButton" class="secondary">
+NO 😈
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 3 -->
+
+<section class="page" id="page3">
+
+<div class="card">
+
+<div class="sticker">🎁</div>
+
+<h1>GIFTS FOR LIPSA & SURUCHI!</h1>
+
+<p>Pick a gift...</p>
+
+<div class="gifts">
+
+<button class="gift" onclick="openGift(0)">
+🎁
+</button>
+
+<button class="gift" onclick="openGift(1)">
+🎁
+</button>
+
+<button class="gift" onclick="openGift(2)">
+🎁
+</button>
+
+</div>
+
+<div id="giftMessage"></div>
+
+
+<!-- SIX PHOTOS -->
+
+<div id="photoGift" style="display:none;">
+
+<h2>📸 OUR MEMORIES ❤️</h2>
+
+<p>Six special memories of Lipsa & Suruchi! 🌸</p>
+
+<div class="memory-gallery">
+
+<img src="photo1.jpg" alt="Memory 1">
+
+<img src="photo2.jpg" alt="Memory 2">
+
+<img src="photo3.jpg" alt="Memory 3">
+
+<img src="photo4.jpg" alt="Memory 4">
+
+<img src="photo5.jpg" alt="Memory 5">
+
+<img src="photo6.jpg" alt="Memory 6">
+
+</div>
+
+</div>
+
+
+<button
+id="continueButton"
+style="display:none"
+onclick="nextPage(4)">
+ONE MORE THING ❤️
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 4 -->
+
+<section class="page" id="page4">
+
+<div class="card">
+
+<div class="sticker">🌸</div>
+
+<h1>OUR MEMORY ❤️</h1>
+
+<p>Add another favourite photo!</p>
+
+<div class="photo-box">
+
+<div id="placeholder"
+class="photo-placeholder">
+
+📸
+
+<small>YOUR PHOTO</small>
+
+</div>
+
+<img id="sisterPhoto" alt="Sisters">
+
+</div>
+
+<label class="upload">
+
+📷 CHOOSE PHOTO
+
+<input
+type="file"
+accept="image/*"
+onchange="loadPhoto(event)">
+
+</label>
+
+<p>
+Lipsa & Suruchi, thank you for all
+the laughs, fights, jokes and memories. ❤️
+</p>
+
+<button onclick="nextPage(5)">
+FINAL SURPRISE 🎀
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 5 -->
+
+<section class="page" id="page5">
+
+<div class="card award">
+
+<div class="trophy">🏆</div>
+
+<h1>BEST SISTERS</h1>
+
+<h2>AWARD</h2>
+
+<p>🥇 Officially awarded to</p>
+
+<div class="name">
+LIPSA ❤️ & SURUCHI ❤️
+</div>
+
+<p>For being:</p>
+
+<p>
+❤️ Caring<br>
+😂 Funny<br>
+😤 Annoying<br>
+🌸 Special<br>
+✨ Irreplaceable
+</p>
+
+<div class="rakhi">
+🎀 🧿 🎀 🧿 🎀
+</div>
+
+<h2>HAPPY RAKSHA BANDHAN!</h2>
+
+<p>Love you both! ❤️</p>
+
+</div>
+
+</section>
+
+<audio id="music" loop>
+    <source src="rakhi-music.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music" onclick="toggleMusic()">🎵</button>
+<script>
+const music = document.getElementById("music");
+
+function toggleMusic() {
+    if (music.paused) {
+        music.play();
+    } else {
+        music.pause();
+    }
+}
+/* PAGE NAVIGATION */
+
+function nextPage(number) {
+
+    document.querySelectorAll(".page")
+    .forEach(function(page) {
+        page.classList.remove("active");
+    });
+
+    document.getElementById("page" + number)
+    .classList.add("active");
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+    if(number === 5) {
+        startConfetti();
+    }
+}
+
+
+/* NO BUTTON */
+
+const noButton =
+document.getElementById("noButton");
+
+noButton.addEventListener(
+    "mouseenter",
+    moveNo
+);
+
+noButton.addEventListener(
+    "touchstart",
+    moveNo
+);
+
+function moveNo() {
+
+    const maxX =
+        window.innerWidth - 120;
+
+    const maxY =
+        window.innerHeight - 80;
+
+    noButton.style.position = "fixed";
+
+    noButton.style.left =
+        Math.random() * maxX + "px";
+
+    noButton.style.top =
+        Math.random() * maxY + "px";
+
+    noButton.innerText = "CATCH ME 😈";
+}
+
+
+/* GIFTS */
+
+const gifts = [
+
+    "🍫 Gift 1: You deserve unlimited chocolate! ❤️",
+
+    "🎀 Gift 2: I promise to annoy you both forever! 😂",
+
+    "📸 Gift 3: Our favourite memories together! ❤️"
+
+];
+
+
+function openGift(number) {
+
+    document.getElementById("giftMessage").innerHTML =
+        gifts[number];
+
+    document.getElementById("continueButton").style.display =
+        "inline-block";
+
+    createHearts(8);
+
+    if(number === 2) {
+
+        document.getElementById("photoGift").style.display =
+            "block";
+
+        createHearts(15);
+    }
+}
+
+
+/* PHOTO UPLOAD */
+
+function loadPhoto(event) {
+
+    const file =
+        event.target.files[0];
+
+    if(!file) return;
+
+    const reader =
+        new FileReader();
+
+    reader.onload =
+    function(e) {
+
+        const image =
+        document.getElementById("sisterPhoto");
+
+        image.src =
+            e.target.result;
+
+        image.style.display =
+            "block";
+
+        document.getElementById("placeholder")
+        .style.display = "none";
+    };
+
+    reader.readAsDataURL(file);
+}
+
+
+/* HEARTS */
+
+function createHearts(amount) {
+
+    for(let i = 0; i < amount; i++) {
+
+        const heart =
+            document.createElement("div");
+
+        heart.className = "heart";
+
+        heart.innerHTML =
+            ["❤️","💗","💖","💕","🌸"]
+            [Math.floor(Math.random() * 5)];
+
+        heart.style.left =
+            Math.random() * 100 + "vw";
+
+        heart.style.animationDuration =
+            (3 + Math.random() * 3) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(function() {
+            heart.remove();
+        }, 6000);
+    }
+}
+
+
+/* FLOATING HEARTS */
+
+setInterval(function() {
+    createHearts(1);
+}, 1500);
+
+
+/* CONFETTI */
+
+function startConfetti() {
+
+    const items =
+        ["🎉","🎊","❤️","🌸","✨","🎀"];
+
+    for(let i = 0; i < 45; i++) {
+
+        const piece =
+            document.createElement("div");
+
+        piece.className = "confetti";
+
+        piece.innerHTML =
+            items[Math.floor(Math.random() * items.length)];
+
+        piece.style.left =
+            Math.random() * 100 + "vw";
+
+        piece.style.animationDuration =
+            (2 + Math.random() * 3) + "s";
+
+        document.body.appendChild(piece);
+
+        setTimeout(function() {
+            piece.remove();
+        }, 5000);
+    }
+}
+
+</script>
+const music = document.getElementById("music");
+const musicButton = document.getElementById("musicButton");
+
+function toggleMusic() {
+    if (music.paused) {
+        music.play();
+        musicButton.innerHTML = "🔊";
+    } else {
+        music.pause();
+        musicButton.innerHTML = "🔇";
+    }
+}
+</body>
+</html>
