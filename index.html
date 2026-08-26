@@ -362,6 +362,36 @@ input[type="file"] {
     border: 2px solid #d95c32;
     box-shadow: 0 3px 0 #efb08b;
 }
+}.special-title {
+    animation: zoomIn 1s ease;
+}
+
+.special-message {
+    animation: fadeUp 1.5s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 </style>
 </head>
@@ -734,7 +764,9 @@ LIPSA ❤️ & SURUCHI ❤️
 <h2>HAPPY RAKSHA BANDHAN!</h2>
 
 <p>Love you both! ❤️</p>
-
+<button onclick="nextPage(6)">
+    SPECIAL MESSAGE 💖
+</button>
 </div>
 
 </section>
@@ -743,7 +775,46 @@ LIPSA ❤️ & SURUCHI ❤️
     <source src="rakhi-music.mp3" type="audio/mpeg">
 </audio>
 
-<button class="music" onclick="toggleMusic()">🎵</button>
+
+
+<!-- PAGE 6 -->
+
+<section class="page" id="page6">
+
+<div class="card">
+
+<button class="back-button" onclick="nextPage(5)">🔙</button>
+
+<div class="sticker">💖</div>
+
+<h1 class="special-title">
+A SPECIAL MESSAGE ❤️
+</h1>
+
+<p class="special-message">
+Lipsa & Suruchi,
+
+No matter how much we joke,
+fight, or annoy each other,
+you both will always be very special to me. ❤️
+
+I'm lucky to have sisters like you.
+
+May we make many more memories,
+laugh together, and stay close forever. 🌸
+
+Happy Raksha Bandhan! 🎀❤️
+</p>
+
+<div class="rakhi">
+🎀 ❤️ 🎀 ❤️ 🎀
+</div>
+
+</div>
+
+</section>
+
+<audio id="music" loop>
 <script>function unlockWebsite() {
 
     const password =
