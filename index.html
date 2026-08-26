@@ -300,11 +300,70 @@ input[type="file"] {
   height: 180px;
   object-fit: cover;
   border-radius: 15px;
+}#passwordScreen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #fff2df;
+}
+
+.password-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 35px 20px;
+    text-align: center;
+    background: #fffdf7;
+    border: 3px solid #d95c32;
+    border-radius: 25px;
+    box-shadow: 8px 8px 0 #efb08b;
+}
+
+.password-card input {
+    width: 100%;
+    padding: 14px;
+    margin: 15px 0;
+    border: 2px solid #d95c32;
+    border-radius: 12px;
+    font-size: 16px;
+}
+
+#passwordError {
+    color: #d84d24;
+    font-weight: bold;
 }
 </style>
 </head>
 
-<body>
+<body><div id="passwordScreen">
+
+    <div class="password-card">
+
+        <div class="sticker">🎀</div>
+
+        <h1>Private Rakhi Surprise ❤️</h1>
+
+        <p>
+            This website is only for Lipsa & Suruchi 🌸
+        </p>
+
+        <input
+            type="password"
+            id="sitePassword"
+            placeholder="Enter secret password">
+
+        <button onclick="unlockWebsite()">
+            OPEN MY SURPRISE 🎁
+        </button>
+
+        <p id="passwordError"></p>
+
+    </div>
+
+</div>
 <audio id="music" loop>
     <source src="rakhi-music.mp3" type="audio/mpeg">
 </audio>
@@ -647,7 +706,22 @@ LIPSA ❤️ & SURUCHI ❤️
 </audio>
 
 <button class="music" onclick="toggleMusic()">🎵</button>
-<script>
+<script>function unlockWebsite() {
+
+    const password =
+        document.getElementById("sitePassword").value;
+
+    if (password === "SKLVBS19") {
+
+        document.getElementById("passwordScreen")
+            .style.display = "none";
+
+    } else {
+
+        document.getElementById("passwordError")
+            .innerText = "Wrong password 😜 Try again!";
+    }
+}
 const music = document.getElementById("music");
 
 function toggleMusic() {
