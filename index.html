@@ -406,7 +406,6 @@ input[type="file"] {
     <source src="rakhi-music.mp3" type="audio/mpeg">
 </audio>
 
-<button id="musicButton" onclick="toggleMusic()">🎵</button>
 <!-- PAGE 1 -->
 
 <section class="page active" id="page1">
@@ -772,7 +771,11 @@ function toggleMusic() {
 }
 /* PAGE NAVIGATION */
 
-function nextPage(number) {
+function nextPage(number) {const music = document.getElementById("music");
+
+if (number === 2) {
+    music.play().catch(function() {});
+}
 
     document.querySelectorAll(".page")
     .forEach(function(page) {
