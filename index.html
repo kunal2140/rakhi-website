@@ -362,71 +362,197 @@ NO 😈
 </section>
 
 
+
 <!-- PAGE 3 -->
 
 <section class="page" id="page3">
 
 <div class="card">
 
-<div class="sticker">🎁</div>
+    <div class="sticker">🎁</div>
 
-<h1>GIFTS FOR LIPSA & SURUCHI!</h1>
+    <h1>GIFTS FOR LIPSA & SURUCHI! ❤️</h1>
 
-<p>Pick a gift...</p>
-
-<div class="gifts">
-
-<button class="gift" onclick="openGift(0)">
-🎁
-</button>
-
-<button class="gift" onclick="openGift(1)">
-🎁
-</button>
-
-<button class="gift" onclick="openGift(2)">
-🎁
-</button>
-
-</div>
-
-<div id="giftMessage"></div>
+    <p>Choose a gift 🎀</p>
 
 
-<!-- SIX PHOTOS -->
+    <!-- THREE GIFTS -->
 
-<div id="photoGift" style="display:none;">
+    <div style="
+        display:flex;
+        justify-content:center;
+        gap:12px;
+        margin:25px 0;
+        flex-wrap:wrap;
+    ">
 
-<h2>📸 OUR MEMORIES ❤️</h2>
+        <button
+            class="gift"
+            onclick="openGift(0)"
+            style="font-size:45px;">
+            🎁
+        </button>
 
-<p>Six special memories of Lipsa & Suruchi! 🌸</p>
+        <button
+            class="gift"
+            onclick="openGift(1)"
+            style="font-size:45px;">
+            🎁
+        </button>
 
-<div class="photo-gallery">
-  <img src="photo1.jpg" alt="Photo 1">
-  <img src="photo2.jpg" alt="Photo 2">
-  <img src="photo3.jpg" alt="Photo 3">
-  <img src="photo4.jpg" alt="Photo 4">
-  <img src="photo5.jpg" alt="Photo 5">
-  <img src="photo6.jpg" alt="Photo 6">
-  <img src="photo7.jpg" alt="Photo 7">
-  <img src="photo8.jpg" alt="Photo 8">
-  <img src="photo9.jpg" alt="Photo 9">
-  <img src="photo10.jpg" alt="Photo 10">
-</div>
+        <button
+            class="gift"
+            onclick="openGift(2)"
+            style="font-size:45px;">
+            🎁
+        </button>
 
-</div>
+    </div>
 
 
-<button
-id="continueButton"
-style="display:none"
-onclick="nextPage(4)">
-ONE MORE THING ❤️
-</button>
+    <!-- MESSAGE -->
+
+    <div id="giftMessage"
+         style="
+            margin:20px auto;
+            font-weight:bold;
+            font-size:17px;
+            line-height:1.5;
+         ">
+    </div>
+
+
+    <!-- GIFT 1 -->
+
+    <div id="gift1Photos"
+         style="
+            display:none;
+            margin-top:20px;
+         ">
+
+        <h2>😂 NOT-SO-GOOD MEMORIES 📸</h2>
+
+        <p>
+            Okay... these photos may not be the best 😂📸,
+            but the memories behind them are priceless! ❤️
+        </p>
+
+        <div style="
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:12px;
+            margin:20px auto;
+            max-width:360px;
+        ">
+
+            <img
+                src="gift1-photo1.jpg"
+                alt="Funny memory 1"
+                style="
+                    width:100%;
+                    height:170px;
+                    object-fit:cover;
+                    border-radius:15px;
+                    border:3px solid #d95c32;
+                ">
+
+            <img
+                src="gift1-photo2.jpg"
+                alt="Funny memory 2"
+                style="
+                    width:100%;
+                    height:170px;
+                    object-fit:cover;
+                    border-radius:15px;
+                    border:3px solid #d95c32;
+                ">
+
+        </div>
+
+    </div>
+
+
+    <!-- GIFT 2 -->
+
+    <!-- Message is shown by JavaScript -->
+
+
+    <!-- GIFT 3 -->
+
+    <div id="photoGift"
+         style="
+            display:none;
+            margin-top:20px;
+         ">
+
+        <h2>📸 OUR 10 MEMORIES ❤️</h2>
+
+        <p>
+            Ten memories, one beautiful sisterhood! 🌸❤️
+        </p>
+
+        <div style="
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:10px;
+            margin:20px auto;
+            max-width:360px;
+        ">
+
+            <img src="photo1.jpg"
+                 style="width:100%;height:150px;object-fit:cover;border-radius:14px;">
+
+            <img src="photo2.jpg"
+                 style="width:100%;height:150px;object-fit:cover;border-radius:14px;">
+
+            <img src="photo3.jpg"
+                 style="width:100%;height:150px;object-fit:cover;border-radius:14px;">
+
+            <img src="photo4.jpg"
+                 style="width:100%;height:150px;object-fit:cover;border-radius:14px;">
+
+            <img src="photo5.jpg"
+                 style="width:100%;height:150px;object-fit:cover;border-radius:14px;">
+
+            <img src="photo6.jpg"
+                 style="width:100%;height:150px;object-fit:cover;border-radius:14px;">
+
+            <img src="photo7.jpg"
+                 style="width:100%;height:150px;object-fit:cover;border-radius:14px;">
+
+            <img src="photo8.jpg"
+                 style="width:100%;height:150px;object-fit:cover;border-radius:14px;">
+
+            <img src="photo9.jpg"
+                 style="width:100%;height:150px;object-fit:cover;border-radius:14px;">
+
+            <img src="photo10.jpg"
+                 style="width:100%;height:150px;object-fit:cover;border-radius:14px;">
+
+        </div>
+
+    </div>
+
+
+    <!-- CONTINUE BUTTON -->
+
+    <button
+        id="continueButton"
+        style="
+            display:none;
+            margin:25px auto 5px;
+        "
+        onclick="nextPage(4)">
+
+        ONE MORE THING ❤️
+
+    </button>
 
 </div>
 
 </section>
+
+   
 
 
 <!-- PAGE 4 -->
@@ -609,21 +735,35 @@ const gifts = [
 
 function openGift(number) {
 
-    document.getElementById("giftMessage").innerHTML =
-        gifts[number];
+    document.getElementById("gift1Photos").style.display = "none";
+    document.getElementById("photoGift").style.display = "none";
+
+    if (number === 0) {
+
+        document.getElementById("giftMessage").innerHTML =
+            "😂 Gift 1: Warning! These photos are too funny! ❤️";
+
+        document.getElementById("gift1Photos").style.display =
+            "block";
+
+    } else if (number === 1) {
+
+        document.getElementById("giftMessage").innerHTML =
+            "🍫 Gift 2: You deserve unlimited chocolate! ❤️";
+
+    } else if (number === 2) {
+
+        document.getElementById("giftMessage").innerHTML =
+            "📸 Gift 3: Ten beautiful memories of Lipsa & Suruchi! ❤️";
+
+        document.getElementById("photoGift").style.display =
+            "block";
+    }
 
     document.getElementById("continueButton").style.display =
         "inline-block";
 
-    createHearts(8);
-
-    if(number === 2) {
-
-        document.getElementById("photoGift").style.display =
-            "block";
-
-        createHearts(15);
-    }
+    createHearts(15);
 }
 
 
