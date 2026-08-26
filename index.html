@@ -561,50 +561,45 @@ NO 😈
 
 <div class="card">
 
-<div class="sticker">🌸</div>
+    <div class="sticker">🌸</div>
 
-<h1>OUR MEMORY ❤️</h1>
+    <h1>OUR MEMORY ❤️</h1>
 
-<p>Add another favourite photo!</p>
+    <p>
+        A special memory of Lipsa & Suruchi 💕
+    </p>
 
-<div class="photo-box">
+    <div class="photo-box">
 
-<div id="placeholder"
-class="photo-placeholder">
+        <img
+            src="special-photo.png"
+            alt="Lipsa and Suruchi"
+            style="
+                display:block;
+                width:260px;
+                height:260px;
+                object-fit:cover;
+                margin:20px auto;
+                border-radius:18px;
+                border:5px solid #d95c32;
+                box-shadow:5px 5px 0 #efb08b;
+            ">
 
-📸
+    </div>
 
-<small>YOUR PHOTO</small>
+    <p>
+        Lipsa & Suruchi, thank you for all
+        the laughs, fights, jokes and memories. ❤️
+    </p>
 
-</div>
-
-<img id="sisterPhoto" alt="Sisters">
-
-</div>
-
-<label class="upload">
-
-📷 CHOOSE PHOTO
-
-<input
-type="file"
-accept="image/*"
-onchange="loadPhoto(event)">
-
-</label>
-
-<p>
-Lipsa & Suruchi, thank you for all
-the laughs, fights, jokes and memories. ❤️
-</p>
-
-<button onclick="nextPage(5)">
-FINAL SURPRISE 🎀
-</button>
+    <button onclick="nextPage(5)">
+        FINAL SURPRISE 🎀
+    </button>
 
 </div>
 
 </section>
+
 
 
 <!-- PAGE 5 -->
@@ -733,7 +728,11 @@ const gifts = [
 ];
 
 
+let openedGifts = [false, false, false];
+
 function openGift(number) {
+
+    openedGifts[number] = true;
 
     document.getElementById("gift1Photos").style.display = "none";
     document.getElementById("photoGift").style.display = "none";
@@ -741,7 +740,7 @@ function openGift(number) {
     if (number === 0) {
 
         document.getElementById("giftMessage").innerHTML =
-            "😂 Gift 1: Warning! These photos are too funny! ❤️";
+            "😂 Gift 1: These photos may not be the best, but the memories are priceless! ❤️";
 
         document.getElementById("gift1Photos").style.display =
             "block";
@@ -760,10 +759,17 @@ function openGift(number) {
             "block";
     }
 
-    document.getElementById("continueButton").style.display =
-        "inline-block";
+    createHearts(10);
 
-    createHearts(15);
+    // Show ONE MORE THING only after all 3 gifts are opened
+    if (
+        openedGifts[0] &&
+        openedGifts[1] &&
+        openedGifts[2]
+    ) {
+        document.getElementById("continueButton").style.display =
+            "block";
+    }
 }
 
 
